@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon in Space - Memory Game</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Flying Rocket -->
+    <div class="rocket">
+        <img src="images/landing.png" alt="Rocket" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Flying Plate -->
+    <div class="plate">
+        <img src="images/plate.svg" alt="Plate" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Orbiting Planets Container -->
+    <div class="planets-container">
+        <!-- Planeta 1 -->
+        <div class="planet-orbit orbit-1">
+            <div class="planet-item item-1">
+                <img src="images/item1.svg" alt="Planet 1" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+        <!-- Planeta 2 -->
+        <div class="planet-orbit orbit-2">
+            <div class="planet-item item-2">
+                <img src="images/item2.svg" alt="Planet 2" onerror="this.style.display='none'">
+            </div>
+        </div>
+
+        <!-- Planeta 3 -->
+        <div class="planet-orbit orbit-3">
+            <div class="planet-item item-3">
+                <img src="images/item3.svg" alt="Planet 3" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <span class="logo-icon"><img src="images/favicon.png" alt="icon" height="30"></span>
+            <span class="logo-text">Simon in Space</span>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <a onclick="showSection('home')">Home</a>
+            <a onclick="showSection('privacy')">Privacy</a>
+            <a onclick="showSection('terms')">Terms</a>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero content-section active" id="home-section">
+        <div class="hero-content">
+            <h1>Simon in Space</h1>
+            <p>Challenge your memory across the cosmos! Test your skills in this exciting memory game where you must
+                remember and repeat sequences on your journey through amazing planets.</p>
+
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="downloadApp()">⬇️ Download Now</button>
+                <button class="btn btn-secondary" onclick="learnMore()">Learn More</button>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat">
+                    <div class="stat-number">⭐ 4.8</div>
+                    <div class="stat-label">RATING</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">DOWNLOADS</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">LEVELS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- caps Section -->
+    <section class="features content-section" id="home-section-2.1">
+        <h2>Binnacle of the game</h2>
+        <div class="features-grid">
+            <div class="cap-card">
+                <img src="images/cap1.png" height="400" />
+            </div>
+            <div class="cap-card">
+                <img src="images/cap2.png" height="400" />
+            </div>
+            <div class="cap-card">
+                <img src="images/cap3.png" height="400" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features content-section" id="home-section-2">
+        <h2>Why Play Simon in Space?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Memory Training</h3>
+                <p>Improve your memory and concentration skills with challenging sequences that grow progressively
+                    harder.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Explore Planets</h3>
+                <p>Travel through beautiful and mysterious planets, each with unique challenges and visual styles.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎮</div>
+                <h3>Multiple Modes</h3>
+                <p>Play through order mode or pairs mode. Customize your experience with audio and difficulty settings.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="features content-section" id="home-section-3">
+        <h2>Download Now</h2>
+        <div class="features-grid">
+            <img src="images/google.svg" height="140" onclick="downloadAppGoogle()"/>
+            <img src="images/apple.svg" height="140" onclick="downloadAppApple()"/>
+            <img src="images/apk.svg" height="140" onclick="downloadAppApk()"/>
+        </div>
+    </section>
+
+    <!-- Privacy Policy -->
+    <section class="content-section" id="privacy-section">
+        <h2>Privacy Policy</h2>
+
+        <h3>1. Introduction</h3>
+        <p>Simon in Space ("we," "us," "our," or "Company") respects the privacy of our users ("User" or "you"). This
+            Privacy Policy explains how we collect, use, disclose, and otherwise process personal information in
+            connection with our mobile applications and online services.</p>
+
+        <h3>2. Information We Collect</h3>
+        <p>We collect the following types of information:</p>
+        <ul>
+            <li><strong>Account Information:</strong> Username, nickname, and optional profile information</li>
+            <li><strong>Game Data:</strong> Game progress, scores, achievements, and level completion status</li>
+            <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers, and
+                mobile network information</li>
+            <li><strong>Usage Data:</strong> How you interact with the app, features used, and duration of play</li>
+            <li><strong>Location Data:</strong> General location information (country/region) for analytics purposes
+                only</li>
+            <li><strong>Crash Data:</strong> Information about app crashes and technical errors</li>
+        </ul>
+
+        <h3>3. How We Use Your Information</h3>
+        <p>We use collected information for the following purposes:</p>
+        <ul>
+            <li>Providing and maintaining our services</li>
+            <li>Creating and managing user accounts</li>
+            <li>Improving and personalizing your experience</li>
+            <li>Analyzing usage patterns and app performance</li>
+            <li>Sending important updates and notifications about the game</li>
+            <li>Detecting and preventing fraud or technical issues</li>
+            <li>Complying with legal obligations</li>
+        </ul>
+
+        <h3>4. Data Security</h3>
+        <p>We implement appropriate technical and organizational measures to protect your personal information against
+            unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the
+            Internet or electronic storage is 100% secure.</p>
+
+        <h3>5. Third-Party Services</h3>
+        <p>We may use third-party services for analytics, crash reporting, and advertising. These services may collect
+            information in accordance with their own privacy policies.</p>
+
+        <h3>6. Contact Us</h3>
+        <p>If you have questions about this Privacy Policy, please contact us at:
+            <strong>privacy@simioninspace.com</strong></p>
+
+        <p style="margin-top: 3rem; color: #808080; font-size: 0.9rem;"><em>Last Updated: January 2024</em></p>
+    </section>
+
+    <!-- Terms of Use -->
+    <section class="content-section" id="terms-section">
+        <h2>Terms of Use</h2>
+
+        <h3>1. Acceptance of Terms</h3>
+        <p>By downloading, installing, or using Simon in Space, you agree to be bound by these Terms of Use. If you do
+            not agree with any part of these terms, you may not use our services.</p>
+
+        <h3>2. License Grant</h3>
+        <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use Simon in Space for your
+            personal, non-commercial purposes. You may not copy, modify, or distribute the app or its content.</p>
+
+        <h3>3. User Conduct</h3>
+        <p>You agree not to engage in any illegal or harmful activities, harass other users, or attempt to gain
+            unauthorized access to the app or its systems.</p>
+
+        <h3>4. In-App Purchases</h3>
+        <p>Simon in Space may offer optional in-app purchases. All purchases are non-refundable unless otherwise
+            required by law. By making a purchase, you authorize us to charge your payment method.</p>
+
+        <h3>5. Intellectual Property Rights</h3>
+        <p>All content in Simon in Space, including graphics, sounds, music, text, and code, is protected by copyright
+            and other intellectual property laws. All rights are reserved.</p>
+
+        <h3>6. Limitation of Liability</h3>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, SIMON IN SPACE AND ITS DEVELOPERS SHALL NOT BE LIABLE FOR ANY
+            INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES.</p>
+
+        <h3>7. Disclaimer of Warranties</h3>
+        <p>SIMON IN SPACE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.</p>
+
+        <h3>8. Contact Information</h3>
+        <p>If you have questions about these Terms of Use, please contact us at:
+            <strong>support@simioninspace.com</strong></p>
+
+        <p style="margin-top: 3rem; color: #808080; font-size: 0.9rem;"><em>Last Updated: January 2024</em></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Simon in Space. All rights reserved. | <a onclick="showSection('privacy')">Privacy</a> | <a
+                onclick="showSection('terms')">Terms</a> | <a href="mailto:support@simioninspace.com">Support</a></p>
+        <p style="margin-top: 1.5rem; font-size: 0.85rem;">Made with 🚀 by Reynaldo San Juan</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
