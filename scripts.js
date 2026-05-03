@@ -15,7 +15,7 @@ function generateStars() {
 
 generateStars();
 
-// Navigation
+// Navigation con soporte para URLs con hash
 function showSection(sectionId) {
     const sections = document.querySelectorAll('.content-section');
     sections.forEach(section => section.classList.remove('active'));
@@ -29,13 +29,48 @@ function showSection(sectionId) {
         document.getElementById('privacy-section').classList.add('active');
     } else if (sectionId === 'terms') {
         document.getElementById('terms-section').classList.add('active');
+    } else if (sectionId === 'download') {
+        document.getElementById('home-section-3').classList.add('active');
     }
 
     window.scrollTo(0, 0);
     toggleMenu(false);
+    
+    // Actualizar la URL sin recargar la página
+    window.history.pushState(null, null, '#' + sectionId);
 }
 
-showSection('home');
+// Manejar navegación por hash en la URL
+function handleHashNavigation() {
+    const hash = window.location.hash.slice(1) || 'home';
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => section.classList.remove('active'));
+
+    if (hash === 'home') {
+        document.getElementById('home-section').classList.add('active');
+        document.getElementById('home-section-2').classList.add('active');
+        document.getElementById('home-section-2.1').classList.add('active');
+        document.getElementById('home-section-3').classList.add('active');
+    } else if (hash === 'privacy') {
+        document.getElementById('privacy-section').classList.add('active');
+    } else if (hash === 'terms') {
+        document.getElementById('terms-section').classList.add('active');
+    } else if (hash === 'download') {
+        document.getElementById('home-section-3').classList.add('active');
+    } else {
+        // Si no coincide, mostrar home por defecto
+        document.getElementById('home-section').classList.add('active');
+        document.getElementById('home-section-2').classList.add('active');
+        document.getElementById('home-section-2.1').classList.add('active');
+        document.getElementById('home-section-3').classList.add('active');
+    }
+}
+
+// Llamar al cargar la página
+handleHashNavigation();
+
+// Escuchar cambios en el hash
+window.addEventListener('hashchange', handleHashNavigation);
 
 function toggleMenu(force = null) {
     const navLinks = document.getElementById('navLinks');
@@ -48,25 +83,19 @@ function toggleMenu(force = null) {
 
 // CTA Buttons
 function downloadApp() {
-    //alert('Download links will be available soon on 🤖 Google Play Store !!!');
-    //window.open('https://play.google.com/store/apps/details?id=com.santech.simoninspace', '_blank');
     document.getElementById('home-section-3').scrollIntoView({ behavior: 'smooth' });
 }
 
 function downloadAppGoogle() {
     alert('Download links will be available soon on 🤖 Google Play Store !!!');
-    //window.open('https://play.google.com/store/apps/details?id=com.santech.simoninspace', '_blank');
-
 }
 
 function downloadAppApple() {
-    alert('Download links will be available soon on  iOS App Store !!!');
-    //window.open('https://apps.apple.com/app/id1234567890', '_blank');
+    alert('Download links will be available soon on  iOS App Store !!!');
 }
 
 function downloadAppApk() {
     alert('Download links will be available soon !!!');
-    //window.open('https://example.com/simoninspace.apk', '_blank');
 }
 
 function learnMore() {
