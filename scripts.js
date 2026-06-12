@@ -87,7 +87,8 @@ function downloadApp() {
 }
 
 function downloadAppGoogle() {
-    alert('Download links will be available soon on 🤖 Google Play Store !!!');
+    //https://play.google.com/store/apps/details?id=com.santech.simon_in_space
+    open("https://play.google.com/store/apps/details?id=com.santech.simon_in_space", "_blank")
 }
 
 function downloadAppApple() {
